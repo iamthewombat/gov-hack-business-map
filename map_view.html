@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="theme.css"/>
+  <title>Testing D3 and Leaflet maps</title>
+  <p id="chart"></p>
+
+  <! load json>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <! color styling>
+  <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+
+
+  <! load leaflet>
+  <! MUST USE THEIR STYLESHEET>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+	crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+	  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+	  crossorigin=""></script>
+
+
+  <script>
+
+    var map = L.map('chart').setView([-33, 152], 4);
+
+
+    L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+    var indicator_names = [];
+    d3.csv('dummy-data-tlbr-indicators.csv', function(err, dat) {
+	var features = []
+	dat.forEach(function(row) {
+
+	    // unpack coordinates
+	    var x1 = Number(row.tl_lat),
+		y1 = Number(row.tl_lon),
+		x2 = Number(row.br_lat),
+		y2 = Number(row.br_lon)
+
+	    // generate indicators
+	    var names = {}
+	    for (var i = 4; i<dat.columns.length; i++) {
+		names[dat.columns[i]] = Number(row[dat.columns[i]])
+		indicator_names.push(dat.columns[i])
+	    }
+	    features.push({
+		"type": "Feature",
+		"properties": {
+		    "indicators": names
+		},
+		"geometry": {
+		    "type": "Polygon",
+		    "coordinates": [
+			[
+			    [y1, x1],
+			    [y2, x1],
+			    [y2, x2],
+			    [y1, x2],
+			    [y1, x1]
+			]
+		    ]
+		}
+	    })
+
+	})
+	var color = d3.scaleLinear()
+	    .domain([0, 5, 10])
+	    .range(["red", "transparent", "green"]);
+	function style(feature) {
+	    var indicators = feature.properties.indicators
+	    var wmean = 0
+	    indicator_names.forEach(function (indicator) {
+		wmean = wmean + indicators[indicator] // * weight from slider
+	    })
+	    wmean = wmean / indicator_names.length // sum of absolute weights from sliders
+
+	    return {
+		fillColor: color(wmean),
+		weight: 2,
+		opacity: 0,
+		color: 'white',
+		dashArray: '3',
+		fillOpacity: 0.7
+	    };
+	}
+	L.geoJson({"type": "FeatureCollection", "features": features},
+		  {"style": style}).addTo(map)
+    })
+
+  </script>
+</html>
+
