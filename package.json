@@ -1,0 +1,22 @@
+{
+  "name": "gov-hack-business-map",
+  "version": "1.0.0",
+  "description": "Gov Hack small business mapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamthewombat/gov-hack-business-map.git"
+  },
+  "author": "Justin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamthewombat/gov-hack-business-map/issues"
+  },
+  "homepage": "https://github.com/iamthewombat/gov-hack-business-map#readme",
+  "dependencies": {
+    "leaflet": "^1.5.1"
+  }
+}
