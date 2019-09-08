@@ -36,7 +36,6 @@
     var number_of_coordinates = 4
 
     d3.csv('dummy-data-tlbr-indicators.csv', function(err, dat) {
-	console.log(dat)
 	for(var i=number_of_coordinates; i<dat.columns.length; i++) {
 	    indicator_names.push(dat.columns[i])
 	}
@@ -48,7 +47,6 @@
 		    console.log('geojson is undefined')
 		    return
 		}
-		console.log('got here')
 		for (var lid in geojson._layers) {
 		    var layer = geojson._layers[lid]
 		    geojson.resetStyle(layer)
@@ -104,6 +102,12 @@
 	    })
 
 	})
+	var slidervals = [0]
+	document.getElementById('abcdefg').oninput = function() {
+	    for (var lid in geojson._layers) {
+		geojson.resetStyle(geojson._layers[lid])
+	    }
+	}
 	var color = d3.scaleLinear()
 	    .domain([0, 5, 10])
 	    .range(["red", "transparent", "green"]);
@@ -112,16 +116,16 @@
 	    var indicators = feature.properties.indicators
 	    var wmean = 0
 	    var ssliders = 0
-	    indicator_names.forEach(function (indicator) {
+	    /*indicator_names.forEach(function (indicator) {
 		wmean = wmean + indicators[indicator] * Number(ind_sliders[indicator].slider.value)
 		ssliders = ssliders + Math.abs(Number(ind_sliders[indicator].slider.value))
 	    })
 	    
 	    if (ssliders === 0) {
 		ssliders = 1
-	    }
+	    }*/
 	    
-	    wmean = wmean / ssliders
+	    wmean = 10 * document.getElementById('abcdefg').value / 10
 
 
 	    indicators.wmean = wmean
@@ -224,6 +228,9 @@
     info.addTo(map);
 
     </script>
+  <div class="slidecontainer">
+    <input type="range" min="-10" max="10" value="10" class="slider" id="abcdefg">
+  </div>
 
   <style>
     .leaflet-control-slider {
