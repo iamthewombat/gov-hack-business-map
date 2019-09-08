@@ -1,280 +1,360 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="theme.css"/>
-  <title>Testing D3 and Leaflet maps</title>
-  <p id="chart"></p>
+<meta charset="utf-8">
+<link rel="stylesheet" href="theme.css" />
+<title>Biz Analysis</title>
+<body>
+	<img id="menu" src="img/menu.png">
 
-  <! load json>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <! color styling>
-  <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+	<div id="container" class="container">
+		<div id="container" class="row">
+			<div id="panel" class="col-sm-4">
+				<br />
+				<p style="size:10px">Analysis Results</p>
+				<div>
+					<div id="infoBox">
+						<h2 id="Suburb">Epping</h2>
+						<div id="score"><img style="width:100%;" src="img/good.png"></div>
+						<!-- <div><h4>Pedestrian Traffic</h4>
+						<div id="value"> </div><div>People per 10 m2<img src="img/green.png" /></div>
+					</div>
+					<div><h4>Distance to Public Transport</h4>
+						<div id="value2"> </div><div>meters <img src="img/red.png" /></div>
+					</div>
+					<div><h4>Foot Traffic</h4>
+							<div id="indicator_2">Medium Average Foot traffic on Mon-Fri<img src="img/orange.png" /></div>
+					</div> -->
+						<div>
+							<h4>Purchasing Power</h4>
+							<div id="indicator_3">80,000 k Medium Income<img src="img/green.png" /></div>
+						</div>
+						<div>
+							<h4>Demographics</h4>
+							<div id="indicator_2">29.4% office workers <img src="img/red.png" /></div>
+						</div>
+						<div>
+							<h4>Foot Traffic</h4>
+							<div id="indicator_2">Medium Average Foot traffic on Mon-Fri<img src="img/orange.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3>Business Success Indicators</h3>
+					<p>Purchasing Power</p>
+					<div class="slidecontainer">
+						<input type="range" min="-10" max="10" value="10" class="slider" id="value">
+					</div>
 
-  
-  <! load leaflet>
-  <! MUST USE THEIR STYLESHEET>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-	crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-	  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-	  crossorigin=""></script>
+					<p>Demographics</p>
+					<div class="slidecontainer">
+						<input type="range" min="-10" max="10" value="10" class="slider" id="pedCount">
+					</div>
 
-  <script src="leaflet-slider/dist/leaflet-slider.js"></script>
-  <script>
+					<p>Foot Traffic</p>
+					<div class="slidecontainer">
+						<input type="range" min="-10" max="10" value="10" class="slider" id="pedCount">
+					</div>
+				</div>
 
-    var map = L.map('chart').setView([-33.864144, 151.202774], 13);
+			</div>
+			<div id="mapChart" class="col-sm-8">
+				<p id="chart" style="height: 600px"></p>
+			</div>
+		</div>
+	</div>
+</body>
+<! load json>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<! color styling>
+		<script src="https://d3js.org/d3-scale.v3.min.js"></script>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
-    var features = [];
-    var geojson;
-    var popup = L.popup();
+		<! load leaflet>
+			<! MUST USE THEIR STYLESHEET>
+				<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+					integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+					crossorigin="" />
+				<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+					integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+					crossorigin=""></script>
 
-    var indicator_names = []
+				<script src="leaflet-slider/dist/leaflet-slider.js"></script>
+				<script>
 
-    var number_of_coordinates = 4
+					var map = L.map('chart').setView([-33.866828, 151.204984], 17);
 
-    d3.csv('dummy-data-tlbr-indicators.csv', function(err, dat) {
-	for(var i=number_of_coordinates; i<dat.columns.length; i++) {
-	    indicator_names.push(dat.columns[i])
-	}
-	
-	// add indicator sliders for each indicator name
-	indicator_names.forEach(function (name) {
-	    ind_sliders[name] = L.control.slider(function(value) {
-		if (geojson === undefined) {
-		    console.log('geojson is undefined')
-		    return
-		}
-		for (var lid in geojson._layers) {
-		    var layer = geojson._layers[lid]
-		    geojson.resetStyle(layer)
-		    //layer.feature.properties.indicators
-		}
-	    }, {
-		min: -1,
-		max: 1,
-		value: 1,
-		position: 'topleft',
-		step: .1,
-		size: '50px',
-		orientation:'horizontal',
-		logo: name.replace('_', ' '),
-		title: 'Time frame',
-		id: name
-	    })
-	    ind_sliders[name].addTo(map)
-	})
+					L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+					var features = [];
+					var geojson;
+					var popup = L.popup();
 
-	
-	// add a square for each coordinate
-	dat.forEach(function(row) {
+					var indicator_names = []
 
-	    // unpack coordinates
-	    var x1 = Number(row.tl_lat),
-		y1 = Number(row.tl_lon),
-		x2 = Number(row.br_lat),
-		y2 = Number(row.br_lon)
+					var number_of_coordinates = 8
 
-	    // generate indicators
-	    var names = {}
-	    for (var i = number_of_coordinates; i<dat.columns.length; i++) {
-		names[dat.columns[i]] = Number(row[dat.columns[i]])
-	    }
-	    features.push({
-		"type": "Feature",
-		"properties": {
-		    "indicators": names
-		},
-		"geometry": {
-		    "type": "Polygon",
-		    "coordinates": [
-			[
-			    [y1, x1],
-			    [y2, x1],
-			    [y2, x2],
-			    [y1, x2],
-			    [y1, x1]
-			]
-		    ]
-		}
-	    })
+					// currently loading from CSV file but plan to be sent over API from backend
 
-	})
-	var slidervals = [0]
-	document.getElementById('abcdefg').oninput = function() {
-	    for (var lid in geojson._layers) {
-		geojson.resetStyle(geojson._layers[lid])
-	    }
-	}
-	var color = d3.scaleLinear()
-	    .domain([0, 5, 10])
-	    .range(["red", "transparent", "green"]);
+					//d3.csv('dummy-data-tlbr-indicators.csv', function(err, dat) {
+					d3.csv('data/ultimo-processed.csv', function (err, dat) {
+						for (var i = number_of_coordinates; i < dat.columns.length; i++) {
+							indicator_names.push(dat.columns[i])
+						}
 
-	function style(feature) {
-	    var indicators = feature.properties.indicators
-	    var wmean = 0
-	    var ssliders = 0
-	    /*indicator_names.forEach(function (indicator) {
-		wmean = wmean + indicators[indicator] * Number(ind_sliders[indicator].slider.value)
-		ssliders = ssliders + Math.abs(Number(ind_sliders[indicator].slider.value))
-	    })
-	    
-	    if (ssliders === 0) {
-		ssliders = 1
-	    }*/
-	    
-	    wmean = 10 * document.getElementById('abcdefg').value / 10
+						// Multiple sliders can be auto populated onto the map depending on the indicators 
+						// sent from the backend
 
-
-	    indicators.wmean = wmean
-
-	    return {
-		fillColor: color(wmean),
-		weight: 2,
-		opacity: 0,
-		color: 'white',
-		dashArray: '3',
-		fillOpacity: 0.7
-	    };
-	}
-
-	geojson = L.geoJson({"type": "FeatureCollection", "features": features},
-			    {style: style,
-			     onEachFeature: onEachFeature}).addTo(map)
-    })
-    
-
-    function zoomToFeature(e) {
-	map.fitBounds(e.target.getBounds());
-	var layer = e.target;
-
-	popup
-	    .setLatLng(e.latlng)
-	    .setContent("Your Indicator 4 is "+ + layer.feature.properties.indicators.indicator_4 +  "<br />" + e.latlng.toString())
-	    .openOn(map);
-
-    }
-
-    function onEachFeature(feature, layer) {
-	layer.on({
-	    mouseover: highlightFeature,
-	    mouseout: resetHighlight,
-	    click: zoomToFeature
-	});
-    }
-
-    function highlightFeature(e) {
-	var layer = e.target;
-
-	layer.setStyle({
-	    fillColor: 'white',
-	    weight: 10,
-	    color: 'blue',
-	    dashArray: '',
-	    fillOpacity: 0.7
-	});
-
-	if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-	    layer.bringToFront();
-	}
-
-	info.update(layer.feature.properties);
-    }
-
-    function resetHighlight(e) {
-	geojson.resetStyle(e.target);
-	info.update();
-    }
-
-    var info = L.control();
-
-    info.onAdd = function (map) {
-	this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-	this.update();
-	return this._div;
-    };
-
-    // method that we will use to update the control based on feature properties passed
-    info.update = function (props) {
-	this._div.innerHTML = '<div class="info"><h4>Precinct Success Indicators</h4>' +
-	    (props ?
-	     '<br />' + props.indicators.indicator_1 + ' Indicator 1' +
-	     '<br />' + props.indicators.indicator_2 + ' people / km<sup>2</sup>' +
-	     '<br /><b>' + props.indicators.indicator_3 + ' Indicator 3 Score' +
-	     '</div>'
-	     : 'Hover over an area');
-    };
+						// add indicator sliders for each indicator name
+						// indicator_names.forEach(function (name) {
+						//     ind_sliders[name] = L.control.slider(function(value) {
+						// 	if (geojson === undefined) {
+						// 	    console.log('geojson is undefined')
+						// 	    return
+						// 	}
+						// 	for (var lid in geojson._layers) {
+						// 	    var layer = geojson._layers[lid]
+						// 	    geojson.resetStyle(layer)
+						// 	    //layer.feature.properties.indicators
+						// 	}
+						//     }, {
+						// 	min: -1,
+						// 	max: 1,
+						// 	value: 1,
+						// 	position: 'topleft',
+						// 	step: .1,
+						// 	size: '50px',
+						// 	orientation:'horizontal',
+						// 	logo: name.replace('_', ' '),
+						// 	title: 'Time frame',
+						// 	id: name
+						//     })
+						//     ind_sliders[name].addTo(map)
+						// })
 
 
-    slider = L.control.slider(function(value) {
-	console.log(value);
-    }, {
-	min: 2000,
-	max: 2030,
-	value: 2019,
-	position: 'topright',
-	step: 1,
-	size: '210px',
-	orientation:'horizontal',
-	logo: 'Changes Over Time',
-	title: 'Time frame',
-	id: 'slider'
-    }).addTo(map);
+						// add a square for each coordinate
+						dat.forEach(function (row) {
 
-    ind_sliders = {}
+							// unpack coordinates
+							var x1 = Number(row.tllat),
+								y1 = Number(row.tllon),
+								x2 = Number(row.trlat),
+								y2 = Number(row.trlon),
+								x3 = Number(row.brlat),
+								y3 = Number(row.brlon),
+								x4 = Number(row.bllat),
+								y4 = Number(row.bllon)
 
-    info.addTo(map);
+							// generate indicators
+							var names = {}
+							for (var i = number_of_coordinates; i < dat.columns.length; i++) {
+								names[dat.columns[i]] = Number(row[dat.columns[i]])
+							}
+							features.push({
+								"type": "Feature",
+								"properties": {
+									"indicators": names
+								},
+								"geometry": {
+									"type": "Polygon",
+									"coordinates": [
+										[
+											[y1, x1],
+											[y2, x2],
+											[y3, x3],
+											[y4, x4],
+											[y1, x1]
+										]
+									]
+								}
+							})
 
-    </script>
-  <div class="slidecontainer">
-    <input type="range" min="-10" max="10" value="10" class="slider" id="abcdefg">
-  </div>
+						})
+						var slidervals = [0]
+						function update() {
+							for (var lid in geojson._layers) {
+								geojson.resetStyle(geojson._layers[lid])
+							}
+						}
 
-  <style>
-    .leaflet-control-slider {
-	height: 100px;
-	background-color: white; 
-	padding: 15px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 2px 2px rgb(138, 137, 137); 
-    }
-    
-    .leaflet-control-slider-value {
-	font-size: 15px;
-	margin-left: 40%;
-    }
+						document.getElementById('value').oninput = update
 
-    .leaflet-control-slider-toggle {
-	font-size: 20px;
-	font-weight: bold;
-    }
+						var color = d3.scaleLinear()
+							.domain([-10, 0, 10])
+							.range(["red", "orange", "green"]);
 
-    .leaflet-container a {
-	color: black;
-    }
+						function style(feature) {
+							var indicators = feature.properties.indicators
+							var wmean = 0
+							var ssliders = 0
+							indicator_names.forEach(function (indicator) {
+								wmean = wmean + indicators[indicator] * Number(document.getElementById(indicator).value)
+								ssliders = ssliders + Math.abs(Number(document.getElementById(indicator).value))
+							})
 
-    /* .info-box {
-			background-color: white;
-			padding: 15px;
-			box-shadow: 0px 0px 2px 2px rgb(138, 137, 137); 
-		} */
+							if (ssliders === 0) { //to get around divide by zero error: to do: fix up later
+								ssliders = 1
+							}
+
+							wmean = wmean / ssliders
+
+							return {
+								fillColor: color(wmean),
+								weight: 2,
+								opacity: 0,
+								fillOpacity: 0.7
+							};
+						}
+
+						geojson = L.geoJson({"type": "FeatureCollection", "features": features},
+							{
+								style: style,
+								onEachFeature: onEachFeature
+							}).addTo(map)
+					})
+
+					function zoomToFeature(e) {
+						map.fitBounds(e.target.getBounds());
+						var layer = e.target;
+
+						popup.setLatLng(e.latlng)
+							//This can be changed to layer.feature.properties.indicators.value or e.latlng.toString() or other values from server
+							.setContent("Suburb: Wollert<br /> is selected")
+							.openOn(map);
+
+						// for demo purposes it will change to Wollert
+						document.getElementById("Suburb").innerHTML = "Wollert";
+						document.getElementById("indicator_2").innerHTML = '48.9% office workers <img src="img/green.png" />';
+						document.getElementById("score").innerHTML = '<img style="width:100%;" src="img/bad.png">';
+					}
+
+					function onEachFeature(feature, layer) {
+						layer.on({
+							mouseover: highlightFeature,
+							mouseout: resetHighlight,
+							click: zoomToFeature
+						});
+					}
+
+					function highlightFeature(e) {
+						var layer = e.target;
+
+						layer.setStyle({
+							fillColor: 'white',
+							weight: 10,
+							color: 'blue',
+							dashArray: '',
+							fillOpacity: 0.7
+						});
+
+						if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+							layer.bringToFront();
+						}
+
+						info.update(layer.feature.properties);
+					}
+
+					function resetHighlight(e) {
+						geojson.resetStyle(e.target);
+						info.update();
+					}
 
 
-    .info {
-	padding: 6px 8px;
-	font: 14px/16px Arial, Helvetica, sans-serif;
-	background: white;
-	background: rgba(255,255,255,0.8);
-	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 5px;
-    }
+					// This info box can update 
+					var info = L.control();
 
-    .info h4 {
-	margin: 0 0 5px;
-	color: #777;
-    }
-  </style>
+					info.onAdd = function (map) {
+						this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+						this.update();
+						return this._div;
+					};
+
+					// method that we will use to update the control based on feature properties passed
+					info.update = function (props) {
+						this._div.innerHTML = '<div class="info"><h4>Precinct Success Indicators</h4>' +
+							(props ?
+								//'<br />' + props.indicators.indicator_1 + '0,000 Medium Income' +
+								'<br />' + props.indicators.value + ' people / 10 m<sup>2</sup>' +
+								'<br /><b>' + props.indicators.indicator_3 + ' Risk Score' +
+								'</div>'
+								: 'Hover over an area');
+						document.getElementById("value").innerHTML = (props ? props.indicators.value : " ");
+						document.getElementById("value2").innerHTML = (props ? props.indicators.value * 8 / 2 : " ");
+					};
+
+
+					slider = L.control.slider(function (value) {
+					}, {
+							min: 2000,
+							max: 2030,
+							value: 2019,
+							position: 'topright',
+							step: 1,
+							size: '210px',
+							orientation: 'horizontal',
+							logo: 'Changes Over Time',
+							title: 'Time frame',
+							id: 'slider'
+						}).addTo(map);
+
+					ind_sliders = {}
+
+					info.addTo(map);
+
+				</script>
+
+
+				<style>
+					.leaflet-control-slider {
+						height: 100px;
+						background-color: white;
+						padding: 15px;
+						border-radius: 10px;
+						box-shadow: 0px 0px 2px 2px rgb(138, 137, 137);
+					}
+
+					.leaflet-control-slider-value {
+						font-size: 15px;
+						margin-left: 40%;
+					}
+
+					.leaflet-control-slider-toggle {
+						font-size: 20px;
+						font-weight: bold;
+					}
+
+					.leaflet-container a {
+						color: black;
+					}
+
+					.info {
+						padding: 6px 8px;
+						font: 14px/16px Arial, Helvetica, sans-serif;
+						background: white;
+						background: rgba(255, 255, 255, 0.8);
+						box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+						border-radius: 5px;
+					}
+
+					.info h4 {
+						margin: 0 0 5px;
+						color: #777;
+					}
+
+					#menu {
+						width: 100%;
+					}
+
+					#panel {
+						width: 20%;
+					}
+
+					p {
+						font-family: 'Roboto', Helvetica, Arial, serif;
+					}
+				</style>
+
 </html>
-
