@@ -1,0 +1,1139 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
+
+@font-face {
+                          font-family: "Futura";
+                          src: url('../fonts/Futura Medium.ttf') format("truetype");
+                        }
+                        
+.landingpage {
+  width               : 100%;
+  min-width           : 1440px;
+  height              : 100vh;
+  min-height          : 1024px;
+  position            : relative;
+  overflow            : hidden;
+  margin              : 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color    : rgba(255, 255, 255, 1.0);
+}
+a {
+  text-decoration     : none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+.anima-full-width-a {
+  width               : 100%;
+}
+.anima-full-height-a {
+  height              : 100%;
+}
+textarea:focus, input:focus {
+  outline             : none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+.landingpage .heroimage {
+  background-color    : rgba(4, 4, 15, 1.0);
+  top                 : 0px;
+  height              : 576px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroimage .mask {
+  background-color    : rgba(4, 4, 15, 1.0);
+  top                 : 0px;
+  height              : 575px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroimage .heroimage1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -298px;
+  height              : 1006px;
+  width               : 1953px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .rectangle {
+  background-color    : rgba(4, 4, 15, 0.61);
+  top                 : 0px;
+  height              : 575px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroform {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 380px;
+  height              : 74px;
+  width               : 967px;
+  position            : absolute;
+  margin              : 0;
+  left                : 237px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroform .background {
+  background-color    : rgba(255, 255, 255, 1.0);
+  top                 : 0px;
+  height              : 74px;
+  width               : 872px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 4px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.95;
+}
+.landingpage .heroform .buttonanalyse {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 74px;
+  width               : 88px;
+  position            : absolute;
+  margin              : 0;
+  left                : 879px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroform .buttonanalyse .background1 {
+  background-color    : rgba(53, 142, 214, 1.0);
+  top                 : 0px;
+  height              : 74px;
+  width               : 88px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 6px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.95;
+}
+.landingpage .heroform .buttonanalyse:hover {
+  cursor: pointer;
+}  
+.landingpage .heroform .buttonanalyse .analyse {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : auto;
+  width               : 72px;
+  position            : absolute;
+  margin              : 0;
+  left                : 8px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 20.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 24.0px;
+}
+.landingpage .heroform .iwanttoopenain {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 55px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 24.0px;
+  color               : rgba(67, 71, 77, 1.0);
+  text-align          : left;
+  letter-spacing      : -0.92px;
+  line-height         : 32.0px;
+}
+.landingpage .heroform .line {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 48px;
+  height              : 3px;
+  width               : 299px;
+  position            : absolute;
+  margin              : 0;
+  left                : 228px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroform .line1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 48px;
+  height              : 2px;
+  width               : 251px;
+  position            : absolute;
+  margin              : 0;
+  left                : 567px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .heroform .textbusinesstypeiebarber {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 19px;
+  height              : 32px;
+  width               : 297px;
+  position            : absolute;
+  margin              : 0;
+  left                : 228px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 24.0px;
+  color               : rgba(142, 142, 147, 1.0);
+  text-align          : left;
+  letter-spacing      : -0.92px;
+  line-height         : 32.0px;
+  border              : 0;
+  resize              : none;
+  padding             : 0;
+}
+.landingpage .heroform .textbusinesstypeiebarber::placeholder {
+  color               : rgba(142, 142, 147, 0.6);
+}
+.landingpage .heroform .textsuburbname {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 20px;
+  height              : 32px;
+  width               : 249px;
+  position            : absolute;
+  margin              : 0;
+  left                : 568px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 24.0px;
+  color               : rgba(142, 142, 147, 1.0);
+  text-align          : left;
+  letter-spacing      : -0.92px;
+  line-height         : 32.0px;
+  border              : 0;
+  resize              : none;
+  padding             : 0;
+}
+.landingpage .heroform .textsuburbname::placeholder {
+  color               : rgba(142, 142, 147, 0.6);
+}
+.landingpage .analyseyourpotenti {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 294px;
+  height              : auto;
+  width               : 425px;
+  position            : absolute;
+  margin              : 0;
+  left                : 500px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 24.0px;
+}
+.landingpage .pulsecheckyourfut {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 169px;
+  height              : auto;
+  width               : 482px;
+  position            : absolute;
+  margin              : 0;
+  left                : 471px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 52.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  letter-spacing      : -2.0px;
+  line-height         : 52.0px;
+}
+.landingpage .group {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 42px;
+  height              : 25px;
+  width               : 1075px;
+  position            : absolute;
+  margin              : 0;
+  left                : 200px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .group .aboutsupportcontac {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 4px;
+  height              : auto;
+  width               : 462px;
+  position            : absolute;
+  margin              : 0;
+  left                : 611px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.8;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 500;
+  font-style          : normal;
+  font-size           : 18.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : right;
+  line-height         : 18.0px;
+}
+.landingpage .group .bizvalidator {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Futura", Helvetica, Arial, serif;
+  font-size           : 22.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  letter-spacing      : 6.11px;
+  line-height         : 25.0px;
+}
+.landingpage .iconbv {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 25px;
+  height              : 45px;
+  width               : 40px;
+  position            : absolute;
+  margin              : 0;
+  left                : 151px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .iconbv .group3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 36px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .iconbv .group3 .group31 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 36px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .iconbv .group6 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 14px;
+  height              : 31px;
+  width               : 31px;
+  position            : absolute;
+  margin              : 0;
+  left                : 9px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .iconbv .group6 .group61 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 31px;
+  width               : 31px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .iconbv .fill7 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 13px;
+  height              : 9px;
+  width               : 9px;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 617px;
+  height              : 148px;
+  width               : 336px;
+  position            : absolute;
+  margin              : 0;
+  left                : 940px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a3 .thebestnetworking {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 107px;
+  height              : auto;
+  width               : 261px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(134, 147, 158, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.landingpage .a3 .beconfidentwithyo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 29px;
+  height              : auto;
+  width               : 261px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 26.0px;
+  color               : rgba(67, 71, 77, 1.0);
+  text-align          : left;
+  line-height         : 34.0px;
+}
+.landingpage .a3 .decide {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : auto;
+  width               : 53px;
+  position            : absolute;
+  margin              : 0;
+  left                : 75px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.8;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 500;
+  font-style          : normal;
+  font-size           : 12.0px;
+  color               : rgba(53, 142, 214, 1.0);
+  text-align          : center;
+  letter-spacing      : 1.0px;
+  line-height         : 18.0px;
+}
+.landingpage .a3 .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 62px;
+  width               : 62px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a3 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 21px;
+  height              : 19px;
+  width               : 22px;
+  position            : absolute;
+  margin              : 0;
+  left                : 21px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 617px;
+  height              : 203px;
+  width               : 336px;
+  position            : absolute;
+  margin              : 0;
+  left                : 552px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a2 .youshouldworrymor {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 140px;
+  height              : auto;
+  width               : 261px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(134, 147, 158, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.landingpage .a2 .usetheinteractive {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 28px;
+  height              : auto;
+  width               : 261px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 26.0px;
+  color               : rgba(67, 71, 77, 1.0);
+  text-align          : left;
+  line-height         : 34.0px;
+}
+.landingpage .a2 .discover {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : 73px;
+  position            : absolute;
+  margin              : 0;
+  left                : 75px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.8;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 500;
+  font-style          : normal;
+  font-size           : 12.0px;
+  color               : rgba(53, 142, 214, 1.0);
+  text-align          : center;
+  letter-spacing      : 1.0px;
+  line-height         : 18.0px;
+}
+.landingpage .a2 .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 62px;
+  width               : 62px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a2 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 20px;
+  height              : 22px;
+  width               : 21px;
+  position            : absolute;
+  margin              : 0;
+  left                : 21px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 616px;
+  height              : 179px;
+  width               : 345px;
+  position            : absolute;
+  margin              : 0;
+  left                : 161px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a1 .wanttowatch240cats240o {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 138px;
+  height              : auto;
+  width               : 270px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(134, 147, 158, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.landingpage .a1 .validatethepotenti {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 30px;
+  height              : auto;
+  width               : 261px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 26.0px;
+  color               : rgba(67, 71, 77, 1.0);
+  text-align          : left;
+  line-height         : 34.0px;
+}
+.landingpage .a1 .inform {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 2px;
+  height              : auto;
+  width               : 90px;
+  position            : absolute;
+  margin              : 0;
+  left                : 76px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.8;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 500;
+  font-style          : normal;
+  font-size           : 12.0px;
+  color               : rgba(53, 142, 214, 1.0);
+  text-align          : left;
+  letter-spacing      : 1.0px;
+  line-height         : 18.0px;
+}
+.landingpage .a1 .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 62px;
+  width               : 62px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .a1 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 17px;
+  height              : 25px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 23px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 470px;
+  height              : 179px;
+  width               : 217px;
+  position            : absolute;
+  margin              : 0;
+  left                : 237px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .background {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 179px;
+  width               : 217px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 217px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 100%;
+  width               : 100%;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 .rectangle1 {
+  background-color    : rgba(0, 0, 0, 0.5);
+  width               : 100%;
+  height              : 32px;
+  pointer-events      : auto;
+  position            : relative;
+  border-radius       : 4px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 .rectangle1-layout-container {
+  pointer-events      : none;
+  flex-direction      : column;
+  top                 : 0;
+  height              : 100%;
+  width               : 217px;
+  justify-content     : center;
+  position            : absolute;
+  margin              : 0;
+  display             : flex;
+  left                : 0px;
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 .keycustomers {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 5px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 8px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  width               : 100%;
+  height              : 17px;
+  pointer-events      : auto;
+  margin-top          : 1px;
+  position            : relative;
+  margin-bottom       : -1px;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.landingpage .dropdownformkeycustomers .dropdownformkeycustomers1 .dropdownform1 .dropdownform2 .icon-layout-container {
+  pointer-events      : none;
+  right               : calc(-0.23% + 11px);
+  flex-direction      : column;
+  top                 : 0;
+  height              : 100%;
+  width               : 10px;
+  justify-content     : center;
+  position            : absolute;
+  margin              : 0;
+  display             : flex;
+}
+.landingpage .dropdownformkeycustomers .dropdown1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 32px;
+  height              : 147px;
+  width               : 219px;
+  position            : absolute;
+  margin              : 0;
+  left                : -1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .rectangle1 {
+  background-color    : rgba(0, 0, 0, 0.7);
+  top                 : 0px;
+  height              : 100%;
+  box-sizing          : border-box;
+  width               : 100%;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 2px;
+  border-style        : solid;
+  border-width        : 1px;
+  border-color        : rgba(150, 150, 150, 1.0);
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .group2 {
+  background-color    : rgba(255,255,255,0.0);
+  bottom              : 43.54%;
+  height              : 10.88%;
+  width               : 7.31%;
+  position            : absolute;
+  margin              : 0;
+  left                : 5.94%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .group2 .checkbox4 {
+  background-color    : rgba(57, 173, 209, 1.0);
+  top                 : 0px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .group2 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 28.12%;
+  height              : 43.75%;
+  width               : 62.50%;
+  position            : absolute;
+  margin              : 0;
+  left                : 18.75%;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .checkbox {
+  background-color    : rgba(224, 231, 237, 1.0);
+  top                 : 39px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .checkbox1 {
+  background-color    : rgba(224, 231, 237, 1.0);
+  top                 : 13px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .checkbox2 {
+  background-color    : rgba(224, 231, 237, 1.0);
+  top                 : 117px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .checkbox3 {
+  background-color    : rgba(224, 231, 237, 1.0);
+  top                 : 91px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .dropdown1 .singlefamilywithchildrenoffceworkerswomenmale {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 17px;
+  height              : 113px;
+  width               : 143px;
+  position            : absolute;
+  margin              : 0;
+  left                : 38px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownformkeycustomers .checkbox5 {
+  background-color    : rgba(224, 231, 237, 1.0);
+  top                 : 99px;
+  height              : 16px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 12px;
+  border-radius       : 3px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownform {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 470px;
+  height              : 32px;
+  width               : 157px;
+  position            : absolute;
+  margin              : 0;
+  left                : 470px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownform .dropdownform1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 157px;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownform .dropdownform1 .rectangle1 {
+  background-color    : rgba(0, 0, 0, 0.5);
+  width               : 100%;
+  height              : 32px;
+  pointer-events      : auto;
+  position            : relative;
+  border-radius       : 4px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.landingpage .dropdownform .dropdownform1 .rectangle1-layout-container {
+  pointer-events      : none;
+  flex-direction      : column;
+  top                 : 0;
+  height              : 100%;
+  width               : 157px;
+  justify-content     : center;
+  position            : absolute;
+  margin              : 0;
+  display             : flex;
+  left                : 0px;
+}
+.landingpage .dropdownform .dropdownform1 .keycustomers {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 5px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 8px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.landingpage .dropdownform .dropdownform1 .icon {
+  background-color    : rgba(255,255,255,0.0);
+  width               : 100%;
+  height              : 16px;
+  pointer-events      : auto;
+  position            : relative;
+  -ms-transform       : rotate(90deg); /* IE 9 */
+  -webkit-transform   : rotate(90deg); /* Chrome, Safari, Opera */
+  transform           : rotate(90deg);
+}
+.landingpage .dropdownform .dropdownform1 .icon-layout-container {
+  pointer-events      : none;
+  right               : 14px;
+  flex-direction      : column;
+  top                 : 0;
+  height              : 100%;
+  width               : 9px;
+  justify-content     : center;
+  position            : absolute;
+  margin              : 0;
+  display             : flex;
+}
+/* .anima-animate-appear prefix for appear animations */
+.anima-animate-appear {
+  opacity             : 0;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 normal forwards;
+}
+.anima-animate-disappear {
+  opacity             : 1;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.anima-animate-nodelay {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay  : 0;
+  animation-delay     : 0;
+}
+@-webkit-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-moz-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-o-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
